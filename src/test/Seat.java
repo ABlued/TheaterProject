@@ -3,8 +3,8 @@ import java.util.Scanner;
 public class Seat {
 	Scanner scan = new Scanner(System.in);
 	private boolean isEmpty;
-	private boolean isBuyPopCorn;
-	private boolean isBuyCoke;
+	private int numberOfPopcorns;
+	private int numberOfCoke;
 	private int totalPrice;
 	private int password;
 	
@@ -24,20 +24,20 @@ public class Seat {
 		this.isEmpty = isEmpty;
 	}
 
-	public boolean geIsBuyPopCorn() {
-		return isBuyPopCorn;
+	public int getNumberOfPopcorns() {
+		return numberOfPopcorns;
 	}
 
-	public void setBuyPopCorn(boolean isBuyPopCorn) {
-		this.isBuyPopCorn = isBuyPopCorn;
+	public void setBuyPopCorn(int numberOfPopcorns) {
+		this.numberOfPopcorns = numberOfPopcorns;
 	}
 
-	public boolean getIsBuyCoke() {
-		return isBuyCoke;
+	public int getNumberOfCoke() {
+		return numberOfCoke;
 	}
 
-	public void setBuyCoke(boolean isBuyCoke) {
-		this.isBuyCoke = isBuyCoke;
+	public void setBuyCoke(int numberOfCoke) {
+		this.numberOfCoke = numberOfCoke;
 	}
 
 	public int getTotalPrice() {
@@ -51,8 +51,8 @@ public class Seat {
 	public Seat() {
 		// TODO Auto-generated constructor stub
 		this.isEmpty = true;
-		this.isBuyPopCorn = false;
-		this.isBuyCoke = false;
+		this.numberOfPopcorns = 0;
+		this.numberOfCoke = 0;
 		this.totalPrice = 0;
 	}
 	
@@ -80,8 +80,8 @@ public class Seat {
 			if(getPassword() == password) {
 			System.out.println("예약취소되었습니다.");
 			this.totalPrice = 0;
-			this.isBuyPopCorn = false;
-			this.isBuyCoke = false;
+			this.numberOfPopcorns = 0;
+			this.numberOfCoke = 0;
 			this.isEmpty = true;
 			}
 			else {
@@ -106,11 +106,11 @@ public class Seat {
 			
 			int input = scan.nextInt();
 			if(input == 1) {
-				this.isBuyPopCorn = true;
+				this.numberOfPopcorns++;
 				this.totalPrice += 5000;
 			}
 			else if(input == 2) {
-				this.isBuyCoke = true;
+				this.numberOfCoke++;
 				this.totalPrice += 3000;
 			}
 			System.out.println("고객님이 내실 총 금액은 " + this.totalPrice + "원입니다.");

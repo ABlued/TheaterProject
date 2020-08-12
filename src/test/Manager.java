@@ -24,8 +24,8 @@ class Manager {
 			for(int i = 0; i < movieTheater.length; i++) {
 				for(int j = 0; j < movieTheater[i].length; j++) {
 					if(movieTheater[i][j].getIsEmpty() == false) totalResevation++;
-					if(movieTheater[i][j].geIsBuyPopCorn()) totalPopCorn++;
-					if(movieTheater[i][j].getIsBuyCoke()) totalCoke++;
+					totalPopCorn += movieTheater[i][j].getNumberOfPopcorns();
+					totalCoke += movieTheater[i][j].getNumberOfCoke();
 					totalPrices += movieTheater[i][j].getTotalPrice();
 				}
 			}
